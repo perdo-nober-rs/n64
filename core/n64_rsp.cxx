@@ -27,15 +27,7 @@ bool is_sign_extension(int16_t high, int16_t low)
 
 int16_t clamp_signed(int64_t value)
 {
-    if (value < -32768)
-    {
-        return -32768;
-    }
-    if (value > 32767)
-    {
-        return 32767;
-    }
-    return value;
+    return (int16_t)std::clamp<int64_t>(value, -32768, 32767);
 }
 
 int16_t clamp_unsigned(int64_t value)
