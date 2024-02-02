@@ -18,8 +18,8 @@
 #include <queue>
 #include <vector>
 
-#define KB(x) (static_cast<size_t>(x << 10))
-#define check_bit(x, y) ((x) & (1u << y))
+#define KB(x) (static_cast<size_t>((x) << 10))
+#define check_bit(x, y) ((x) & (1u << (y)))
 
 constexpr auto INSTRS_PER_SECOND = 93'750'000;
 constexpr uint32_t KSEG0_START = 0x8000'0000;
