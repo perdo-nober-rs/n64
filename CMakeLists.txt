@@ -7,6 +7,10 @@ if (EMSCRIPTEN)
     set(CMAKE_SHARED_LIBRARY_SUFFIX_CXX ".wasm")
     set(CMAKE_STRIP FALSE)
 endif()
+if (WIN32)
+    add_compile_definitions(WIN32_LEAN_AND_MEAN)
+endif()
+
 set(N64_FILES
     core.cxx
     core/n64_impl.cxx
