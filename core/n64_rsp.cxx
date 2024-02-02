@@ -256,8 +256,8 @@ namespace hydra::N64
 
     uint16_t RSP::load_halfword(uint16_t address)
     {
-        uint16_t data = mem_[address & 0xFFF] | (mem_[(address + 1) & 0xFFF] << 8);
-        return hydra::bswap16(data);
+        uint16_t data = (mem_[address & 0xFFF] << 8) | mem_[(address + 1) & 0xFFF];
+        return data;
     }
 
     uint32_t RSP::load_word(uint16_t address)
